@@ -16,6 +16,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "@tailwindcss/cli": "^4.0.9"
+        "@tailwindcss/cli": "^4.0.9",
+        "preline": "^3.0.0"
     }
 }
