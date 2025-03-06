@@ -1,10 +1,12 @@
-<div class="bg-blue-600 text-black py-12">
-        <div class="max-w-7xl mx-auto text-center">
+<body class="m-0 p-0 w-full overflow-x-hidden"></body>
+
+<div class="bg-gray-500 text-black py-14 w-screen absolute left-0 right-0">
+        <div class="w-full text-center">
             <h1 class="text-4xl font-bold">Find Cheap Flights</h1>
             <p class="mt-2">Compare and book flights with ease</p>
-            <div class="mt-6 bg-white p-4 rounded-lg shadow-lg max-w-6xl mx-auto">
+            <div class="mt-6 bg-white p-4 rounded-lg shadow-lg max-w-7xl mx-auto">
                 <form class="flex space-x-2 items-center">
-                    <select id="tripType" class="p-3 border rounded w-1/6">
+                    <select id="tripType" class="p-3 border rounded w-2/6">
                         <option value="one-way">One Way</option>
                         <option value="round-trip">Round Trip</option>
                     </select>
@@ -61,7 +63,7 @@
     </div>
 
     <div class="max-w-7xl mx-auto py-12">
-        <div class="flex items-center justify-center min-h-[80vh] bg-gray-800 text-white gap-8">
+        <div class="flex items-center justify-center min-h-[80vh] bg-gray-800 text-white gap-8 py-20">
             <h1 class="">Hello world</h1>
             <!-- First card -->
             <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg max-w-xs my-8 bg-gray-500 hover:bg-gray-700">
@@ -136,7 +138,7 @@
         </div>
     </div>
 
-    <footer class="bg-white text-center py-6 shadow-md mt-12">
+    <footer class="bg-white text-center py-6 shadow-md mt-12 w-full">
         <p class="text-gray-600">&copy; 2025 CheapFlights Clone. All rights reserved.</p>
     </footer>
 
