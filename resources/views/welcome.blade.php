@@ -15,6 +15,7 @@
             height: 100vh;
         }
     </style>
+
 </head>
 <body class="antialiased bg-gray-100">
     <div class="relative w-full hero flex items-center justify-center text-center text-white">
@@ -38,5 +39,13 @@
             </div>
         </div>
     </div>
+
+    <!-- Flight Search Component -->
+    <div class="container mx-auto mt-10 p-6">
+        @livewire('flight-search')
+    </div>
+
+    @livewireScripts
 </body>
+
 </html>

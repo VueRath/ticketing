@@ -9,19 +9,10 @@ class Destination extends Model
 {
     use HasFactory;
 
-    protected $fillable = 
-    [
-        'destinations_id',
-        'name'
-    ];
+    protected $fillable = ['name'];
 
-    public function AirlineClass()
+    public function flights()
     {
-        return $this->belongsTo(Airlines::class,'airlines_id');
-    }
-
-    public function FlightUsersClass()
-    {
-        return $this->hasMany(FlightUser::class);
+        return $this->hasMany(Flight::class, 'destinations_id');
     }
 }

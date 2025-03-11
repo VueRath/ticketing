@@ -17,9 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/about-us', function () {
+    return view('about-us');
+})->name('about-us'); // Use 'about-us' instead of 'about us'
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

@@ -96,8 +96,8 @@
                         $1600
                     </p>
                     <h3 class="mt-0.5 text-lg text-white">Medium house</h3>
-                    
-                    
+
+
                     <p class="mt-2 line-clamp-3 text-sm text-gray-400">
                         "Comfortable and spacious medium-sized house available for $1600 per night. Featuring a cozy living area, fully equipped kitchen, two bedrooms, and a private backyard. Perfect for small families or groups seeking a relaxing stay."
                     </p>
