@@ -13,6 +13,6 @@ class Destination extends Model
 
     public function flights()
     {
-        return $this->hasMany(Flight::class, 'destinations_id');
+        return $this->hasMany(flights::class, 'destinations_id');
     }
 }

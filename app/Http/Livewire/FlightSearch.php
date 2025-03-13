@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\flights;
 use Livewire\Component;
 use App\Models\Flight;
 
@@ -18,7 +19,7 @@ class FlightSearch extends Component
 
     public function searchFlights()
     {
-        $this->flights = Flight::where('departure', $this->departure)
+        $this->flights = flights::where('departure', $this->departure)
             ->where('destination', $this->destination)
             ->whereDate('departure_date', $this->departureDate)
             ->get();

@@ -13,15 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('flight_users', function (Blueprint $table) {
+        Schema::create('flights', function (Blueprint $table) {
             $table->id();
             $table->foreignId('airlines_id')->constrained('airlines');
-            $table->foreignId('destinations_id')->constrained('destinations');
-            $table->string('airline_name');
-            $table->string('destination_name');
-            $table->string('name');
-            $table->integer('count_people');
-            $table->integer('amount');
+            $table->foreignId('destinations_id')->constrained();
+            $table->string('departure');
+            $table->string('destination');
+            $table->date('departure_date');
+            $table->date('return_date')->nullable();
+            $table->integer('passenger_limit');
+            $table->string('class_type'); 
+            $table->decimal('price', 10, 2);
             $table->timestamps();
         });
     }
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('flight_users');
+        Schema::dropIfExists('flights');
     }
 };

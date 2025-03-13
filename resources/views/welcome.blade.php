@@ -39,12 +39,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Flight Search Component -->
-    <div class="container mx-auto mt-10 p-6">
-        @livewire('flight-search')
-    </div>
-
     @livewireScripts
 </body>
 

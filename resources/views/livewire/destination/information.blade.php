@@ -10,17 +10,17 @@
                         <option value="one-way">One Way</option>
                         <option value="round-trip">Round Trip</option>
                     </select>
-                    <select id="$airline_id" wire:model="$airline_id" class="w-full p-2 rounded bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:ring focus:border-blue-500 appearance-none">
+                    <select id="airlines_id" wire:model="airlines_id" class="w-full p-2 rounded bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:ring focus:border-blue-500 appearance-none">
                         <option value="">--- From --</option>
-                        @foreach ($airline as $name => $airline_id)
-                            <option value="{{ $name }}">{{ $name }}</option> <!-- Ensure correct value & label -->
+                        @foreach ($airline as $name => $id)
+                            <option value="{{ $id }}">{{ $name }}</option>
                         @endforeach
                     </select>
                     <button type="button" id="swapButton" class="p-3 border rounded bg-gray-300">⇆</button>
-                    <select id="$destination_id" wire:model="$destination_id" class="w-full p-2 rounded bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:ring focus:border-blue-500 appearance-none">
-                        <option value="">-- to --</option>
-                        @foreach ($destination as $name => $destination_id)
-                            <option value="{{ $name }}">{{ $name }}</option> <!-- Ensure correct value & label -->
+                    <select id="destinations_id" wire:model="destinations_id" class="w-full p-2 rounded bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:ring focus:border-blue-500 appearance-none">
+                        <option value="">-- To --</option>
+                        @foreach ($destination as $name => $id)
+                            <option value="{{ $id }}">{{ $name }}</option>
                         @endforeach
                     </select>
                     <input type="date" class="p-3 border rounded w-1/6" onfocus="this.type='date'" onblur="this.type='text'" placeholder="Departure">
@@ -56,7 +56,9 @@
                         <option>First Class</option>
                     </select>
 
-                    <button class="bg-blue-600 text-white px-4 py-3 rounded">Search</button>
+                    <a href="{{ route('flightusers.create') }}" class="bg-blue-600 text-white px-4 py-3 rounded">
+                            Book
+                    </a>
                 </form>
             </div>
         </div>
