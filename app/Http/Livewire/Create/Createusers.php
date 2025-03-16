@@ -10,15 +10,7 @@ use Livewire\Component;
 class Createusers extends Component
 {
 
-    /*
-        'airlines_id',
-        'destinations_id',
-        'airline_name',
-        'destination_name',
-        'name',
-        'count_people',
-        'amount'
-    */
+
 
     public $airlines_id, $destinations_id, $airline_name, $destination_name;
 
@@ -66,12 +58,22 @@ class Createusers extends Component
 
     public function updateAirlineName($value)
     {
+        if (!isset($this->airline[$value])) {
+            session()->flash('error', 'Invalid airline selected.');
+            return;
+        }
+
         $this->airlines_id = $this->airline[$value] ?? null;
         $this->airline_name = $value;
     }
 
     public function updateDestinationName($value)
     {
+        if (!isset($this->destination[$value])) {
+            session()->flash('error', 'Invalid destination selected.');
+            return;
+        }
+
         $this->destinations_id = $this->destination[$value] ?? null;
         $this->destination_name = $value;
     }
@@ -79,6 +81,17 @@ class Createusers extends Component
     public function save()
     {
         $this->validate();
+
+
+        logger()->info('Saving FlightUser:', [
+        'airlines_id' => $this->airlines_id,
+        'destinations_id' => $this->destinations_id,
+        'airline_name' => $this->airline_name,
+        'destination_name' => $this->destination_name,
+        'name' => $this->name,
+        'count_people' => $this->count_people,
+        'amount' => $this->amount,
+    ]);
         
 
         if (!$this->airlines_id || !$this->destinations_id) {
@@ -101,7 +114,7 @@ class Createusers extends Component
 
             $this->reset(['airlines_id', 'destinations_id', 'airline_name', 'destination_name', 'name', 'count_people', 'amount']);
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('message', 'User created successfully!');
         } catch (\Exception $e) {
             throw ValidationValidationException::withMessages(['error' => 'Failed to save user.']);
         }
